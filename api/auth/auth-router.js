@@ -6,8 +6,6 @@ const Users = require("../users/users-model");
 const { validUserBody } = require("../middleware/middleware");
 const { generateToken } = require("../token/token");
 
-
-
 router.post("/register", validUserBody, (req, res) => {
     const user = req.body;
     const hashed = brcypt.hashSync(user.password, 10);
@@ -29,9 +27,11 @@ router.post("/login", validUserBody, (req, res) => {
                 console.log(generateToken(user), "FUNC")
                 const token = generateToken(user);
                 res.status(200).json({ message: "Velcome", token })
+            } else {
+                res.status(401).json({ message: "Invalid credentials" })
             }
         })
-        .catch(err => { console.log(err) })
+        .catch(err => { res.status(500).json({ message: err.message }) })
 });
 
 module.exports = router;

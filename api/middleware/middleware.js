@@ -1,6 +1,7 @@
 const db = require("../../database/db-config");
 const express = require("express");
 const router = express.Router();
+const User = require("../users/users-model")
 
 async function validUserBody(req, res, next) {
     const user = req.body;
@@ -16,6 +17,7 @@ async function validUserBody(req, res, next) {
     catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
+
 
 module.exports = { validUserBody };

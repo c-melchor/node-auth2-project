@@ -12,5 +12,8 @@ module.exports = {
             .catch(err => {
                 console.log(err);
             })
+    },
+    getBy(filter) {
+        return db("users").where("username", filter).first();
     }
 };

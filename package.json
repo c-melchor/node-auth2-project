@@ -1,0 +1,19 @@
+{
+  "name": "auth2-project",
+  "version": "1.0.0",
+  "description": "Authorization project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-melchor/node-auth2-project.git"
+  },
+  "author": "Lambda School",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c-melchor/node-auth2-project/issues"
+  },
+  "homepage": "https://github.com/c-melchor/node-auth2-project#readme"
+}
